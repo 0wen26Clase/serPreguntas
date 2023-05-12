@@ -31,6 +31,7 @@ app.post("/getData", (req, res) => {
 
 	// Aquí guardamos los datos en la base de datos
 	const miColeccion = db.collection("ranking");
+	console.log(playername)
 
 	const datosAGuardar = {
 		playername: req.body.playername,
