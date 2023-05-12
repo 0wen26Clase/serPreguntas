@@ -13,7 +13,7 @@ app.use(cors());
 
 app.get("/getData", (req, res) => {
 	const miColeccion = db.collection("ranking");
-	
+	console.log("esta pasando")
 	miColeccion.find({}).toArray((err, data) => {
 		if (err) {
 			console.log(err);
