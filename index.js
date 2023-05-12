@@ -34,7 +34,7 @@ app.post("/getData", (req, res) => {
 	console.log(playername)
 
 	const datosAGuardar = {
-		playername: req.body.playername,
+		
 		correctas: req.body.correctas,
 		incorrectas: req.body.incorrectas,
 	};
