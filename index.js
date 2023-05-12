@@ -12,6 +12,7 @@ app.use(express.json());
 
 app.get("/getData", (req, res) => {
 	const miColeccion = db.collection("ranking");
+	console.log("probando la funcion")
 	miColeccion.find({}).toArray((err, data) => {
 		if (err) {
 			console.log(err);
@@ -19,7 +20,8 @@ app.get("/getData", (req, res) => {
 				"Error al obtener los datos desde la base de datos"
 			);
 		} else {
-			res.status(200).json(data);
+			//res.status(200).json(data);
+			console.log("get")
 		}
 	});
 });
