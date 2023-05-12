@@ -1,18 +1,17 @@
 const { dbConnection, db } = require("./database/config");
 const express = require("express");
 const cors = require("cors");
-
+const app = express();
 const port = 3000;
 
 //base de datos
 dbConnection();
 
-const app = express();
 app.use(cors());
+app.use(express.json());
 
 app.get("/getData", (req, res) => {
 	const miColeccion = db.collection("ranking");
-	console.log("esta pasando")
 	miColeccion.find({}).toArray((err, data) => {
 		if (err) {
 			console.log(err);
