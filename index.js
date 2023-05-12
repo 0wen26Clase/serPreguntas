@@ -21,7 +21,6 @@ app.get("/getData", (req, res) => {
 			);
 		} else {
 			res.status(200).json(data);
-			console.log("get")
 		}
 	});
 });
