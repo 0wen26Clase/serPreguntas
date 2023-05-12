@@ -7,8 +7,9 @@ const port = 3000;
 //base de datos
 dbConnection();
 
+const app = express();
+
 app.use(cors());
-app.use(express.json());
 
 app.get("/getData", (req, res) => {
 	const miColeccion = db.collection("ranking");
