@@ -27,7 +27,7 @@ app.get("/getData", (req, res) => {
 });
 
 app.post("/getData", (req, res) => {
-	console.log("Player name: " + req.body.playerName);
+	console.log("Player name: " + req.body.playername);
 	console.log("correctas: " + req.body.correctas);
 	console.log("incorrectas: " + req.body.incorrectas);
 
@@ -35,7 +35,7 @@ app.post("/getData", (req, res) => {
 	const miColeccion = db.collection("ranking");
 
 	const datosAGuardar = {
-		playername: req.body.playerName,
+		playername: req.body.playername,
 		correctas: req.body.correctas,
 		incorrectas: req.body.incorrectas,
 	};
