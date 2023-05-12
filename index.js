@@ -20,7 +20,7 @@ app.get("/getData", (req, res) => {
 				"Error al obtener los datos desde la base de datos"
 			);
 		} else {
-			//res.status(200).json(data);
+			res.status(200).json(data);
 			console.log("get")
 		}
 	});
