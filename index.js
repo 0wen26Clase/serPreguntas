@@ -27,9 +27,7 @@ app.get("/getData", (req, res) => {
 });
 
 app.post("/getData", (req, res) => {
-	console.log("Player name: " + req.body.playername);
-	console.log("correctas: " + req.body.correctas);
-	console.log("incorrectas: " + req.body.incorrectas);
+	
 
 	// Aquí guardamos los datos en la base de datos
 	const miColeccion = db.collection("ranking");
