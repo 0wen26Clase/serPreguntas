@@ -8,7 +8,6 @@ const port = 3000;
 dbConnection();
 
 const app = express();
-
 app.use(cors());
 
 app.get("/getData", (req, res) => {
