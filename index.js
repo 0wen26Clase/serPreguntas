@@ -27,14 +27,15 @@ app.get("/getData", (req, res) => {
 });
 
 app.post("/getData", (req, res) => {
-	
+	console.log("Player name: " + req.body.playerName);
+	console.log("correctas: " + req.body.correctas);
+	console.log("incorrectas: " + req.body.incorrectas);
 
 	// Aquí guardamos los datos en la base de datos
 	const miColeccion = db.collection("ranking");
-	
 
 	const datosAGuardar = {
-		
+		playername: req.body.playerName,
 		correctas: req.body.correctas,
 		incorrectas: req.body.incorrectas,
 	};
@@ -45,7 +46,6 @@ app.post("/getData", (req, res) => {
 		} else {
 			//console.log(result);
 			res.send("Los datos se han guardado correctamente");
-			console.log("datos guardados")
 		}
 	});
 });
