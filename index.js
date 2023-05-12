@@ -27,7 +27,7 @@ app.get("/getData", (req, res) => {
 });
 
 app.post("/getData", (req, res) => {
-	console.log("Player name: " + req.body.playername);
+	console.log("Player name: " + req.body.playerName);
 	console.log("correctas: " + req.body.correctas);
 	console.log("incorrectas: " + req.body.incorrectas);
 
