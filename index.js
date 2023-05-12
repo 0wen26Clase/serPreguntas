@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.get("/getData", (req, res) => {
 	const miColeccion = db.collection("ranking");
-	console.log("probando la funcion")
+	
 	miColeccion.find({}).toArray((err, data) => {
 		if (err) {
 			console.log(err);
@@ -45,6 +45,7 @@ app.post("/getData", (req, res) => {
 		} else {
 			//console.log(result);
 			res.send("Los datos se han guardado correctamente");
+			console.log("datos guardados")
 		}
 	});
 });
