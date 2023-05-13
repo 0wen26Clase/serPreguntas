@@ -7,8 +7,15 @@ const port = 3000;
 //base de datos
 dbConnection();
 
-app.use(cors());
+const app = express.static("public");
 app.use(express.json());
+
+app.use(cors());
+
+//rutas
+app.get("*", (req, res) => {
+	res.sendFile(__dirname + "/public/index.html");
+});
 
 app.get("/getData", (req, res) => {
 	const miColeccion = db.collection("ranking");
