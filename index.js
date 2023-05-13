@@ -1,16 +1,16 @@
 const { dbConnection, db } = require("./database/config");
 const express = require("express");
 const cors = require("cors");
-
+const app = express();
 const port = 3000;
 
 //base de datos
 dbConnection();
 
-const app = express.static("public");
-app.use(express.json());
-
+app.use(express.static("public"));
 app.use(cors());
+
+app.use(express.json());
 
 //rutas
 app.get("*", (req, res) => {
