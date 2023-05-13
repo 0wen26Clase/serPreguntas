@@ -13,9 +13,6 @@ app.use(cors());
 app.use(express.json());
 
 //rutas
-app.get("*", (req, res) => {
-	res.sendFile(__dirname + "/public/index.html");
-});
 
 app.get("/getData", (req, res) => {
 	const miColeccion = db.collection("ranking");
@@ -30,7 +27,9 @@ app.get("/getData", (req, res) => {
 		}
 	});
 });
-
+app.get("*", (req, res) => {
+	res.sendFile(__dirname + "/public/index.html");
+});
 app.post("/getData", (req, res) => {
 	console.log("Player name: " + req.body.playerName);
 	console.log("correctas: " + req.body.correctas);
